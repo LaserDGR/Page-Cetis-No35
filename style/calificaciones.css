@@ -1,0 +1,50 @@
+#nav-bar {
+    background: linear-gradient(rgba(68,13,13,0.35), rgba(38,2,2,0.446)), url(../Img/Calificaciones-bg.png) no-repeat center/cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+nav>a {
+    text-decoration: none;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+nav>a:hover {
+    color: red;
+}
+
+.bg-info {
+    background-color: #5e2129 !important;
+    color: white;
+}
+
+.bg-warning {
+    background-color: #464646 !important;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #464646;
+    border-color: black;
+}
+
+.btn-primary:hover {
+    background-color: #5e2129;
+}
+
+footer {
+    background-color: #5e2129;
+    color: white;
+    padding-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

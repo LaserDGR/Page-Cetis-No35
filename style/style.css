@@ -26,6 +26,7 @@ body {
 .pharse {
     text-align: center;
     color: white;
+    font-size: 18px;
 }
 
 /* 1ra section */
@@ -67,7 +68,7 @@ nav>a:hover {
 }
 
 #first-section-content {
-    margin-top: 3rem;
+    margin-top: 12rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -199,7 +200,7 @@ nav>a:hover {
 }
 
 #fourth-section-right>hr {
-    width: 4.5rem;
+    width: 12.5rem;
     border-color: #5e2129;
     margin-left: 0;
     margin-bottom: 3rem;
@@ -260,8 +261,7 @@ nav>a:hover {
     width: 25rem;
 }
 
-#fifth-section-right > hr {
-    width: 4.5rem;
+#fifth-section-left > hr {
     border-color: #5e2129;
     margin-left: 0;
     margin-bottom: 3rem;
@@ -321,13 +321,13 @@ nav>a:hover {
 #sixth-section-left > hr {
     width: 20.5rem;
     border-color: #5e2129;
-    margin-left: 22%;
+    margin-left: 27%;
     margin-bottom: 3rem;
 }
 
 .sixth-button {
     position: absolute;
-    left: 23%;
+    left: 25%;
 }
 
 footer {

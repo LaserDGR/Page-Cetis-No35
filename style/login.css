@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(rgba(68,13,13,0.35), rgba(38,2,2,0.446)), url(../Img/Login-bg.jpg) no-repeat center/cover;
+    position: relative;
+}
+
+.contenedor {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+#nav-bar {
+    background: linear-gradient(rgba(68,13,13,0.35), rgba(38,2,2,0.446)), url(../Img/Calificaciones-bg.png) no-repeat center/cover;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+nav>a {
+    text-decoration: none;
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+nav>a:hover {
+    color: red;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: rgba(245, 245, 245, 0.32);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    padding: 30px 35px;
+    box-shadow: 0 5px 10px rgba(71,3,6,0.7);
+    border-radius: 7px;
+}
+
+form .title {
+    color: #252525;
+    font-size: 25px;
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+
+form label {
+    margin-bottom: 3.5rem;
+}
+
+form label .fa-solid {
+    font-size: 2rem;
+    color: #5e2129;
+    margin-right: 1rem;
+}
+
+form label input {
+    outline: none;
+    border: none;
+    color: #252525;
+    border-bottom: solid 1.5px #5e2129;
+    padding: 1rem;
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+form label input::placeholder {
+    color: rgba(37, 37, 37, 0.726);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+form .link {
+    color: #252525;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+form button {
+    color: #fff;
+    border: none;
+    background: #5e2129;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .5s ease;
+}
+
+form button:hover {
+    background: red;
+}

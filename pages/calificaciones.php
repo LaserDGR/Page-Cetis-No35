@@ -49,38 +49,51 @@
                 <div class="card bg-info text-center">
                     <h3>Calificación De Parciales</h3>
                 </div>
-                <form class="row g-3 needs-validation" novalidate>
+                <form action="post.php" method="POST"  class="row g-3 needs-validation" novalidate>
                     <div class="row">
-                        <div class="col-12 mt-3">
+                        <div class="col-6 mt-3">
                             <label class="form-label" for="firstname">Nombres</label>
-                            <input type="text" id="nombre" class="form-control" required>
+                            <input type="text" id="nombre" name="nombre" class="form-control" required>
                             <div class="invalid-feedback">
                                 Ingrese nombre del alumno
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Número Control</label>
+                            <input type="text" id="nombre" name="n_control" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese el número control
                             </div>
                         </div>
 
                         <div class="col-4 mt-3">
                             <label class="form-label" for="zip">Parcial 1 </label>
-                            <input type="number" id="nota1" class="form-control" required>
+                            <input type="number" id="nota1" name="parcial1"  class="form-control" required>
                             <div class="invalid-feedback">
                                 Ingrese la Calificación del parcial 1
                             </div>
                         </div>
                         <div class="col-4 mt-3">
                             <label class="form-label" for="zip">Parcial 2 </label>
-                            <input type="number" id="nota2" class="form-control" required>
+                            <input type="number" id="nota2" name="parcial2"  class="form-control" required>
                             <div class="invalid-feedback">
                                 Ingrese la Calificación del parcial 2
                             </div>
                         </div>
                         <div class="col-4 mt-3">
                             <label class="form-label" for="zip">Parcial 3 </label>
-                            <input type="number" id="nota3" class="form-control" required>
+                            <input type="number" id="nota3" name="parcial3" class="form-control" required>
                             <div class="invalid-feedback">
                                 Ingrese la Calificación del parcial 3
                             </div>
                         </div>
-
+                        <!-- Campos ocultos para la tabla -->
+  <input type="hidden" name="tabla[0][0]" id="tabla-0-0">
+  <input type="hidden" name="tabla[0][1]" id="tabla-0-1">
+  <input type="hidden" name="tabla[0][2]" id="tabla-0-2">
+  <input type="hidden" name="tabla[0][3]" id="tabla-0-3">
+  <input type="hidden" name="tabla[0][4]" id="tabla-0-4">
+  <input type="hidden" name="tabla[0][5]" id="tabla-0-5">
 
                     </div>
                     <hr class="mt-5">
@@ -92,6 +105,9 @@
                     <hr>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                         <button class="btn btn-primary btn-block mb-4" onclick="agregarNotas();">Promediar Calificación</button>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button class="btn btn-primary btn-block mb-4" name="save_score" >Guardar</button>
                     </div>
 
                 </form>

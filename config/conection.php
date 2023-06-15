@@ -9,6 +9,7 @@ $conn =mysqli_connect(
     'cetis35'
 );
 
+
 if(isset($conn)){
     echo 'is connected';
 }

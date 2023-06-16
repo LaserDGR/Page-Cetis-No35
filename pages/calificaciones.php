@@ -1,8 +1,16 @@
 <?php include("../config/conection.php")?>
 <?php include("../header/header.php")?>
-
-<div class="container col-8 my-5 br-2 rounded">
-        <div class="row g-3">
+ <!-- MESSAGES -->
+ <?php if (isset($_SESSION['message'])) { ?>
+        <div class="alert alert-<?= $_SESSION['message_type']?> alert-dismissible fade show" role="alert">
+          <?= $_SESSION['message']?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <?php session_unset(); } ?>
+<div class="container col-12  my-5 br-2 rounded">
+        <div class="row g-3  ">
             <div class="col-4 order-md-last">
                 <div class="card text-center bg-warning">
                     <h4>Cetis No 35</h4>
@@ -159,7 +167,6 @@ if ($result) {
     echo '<th>Parcial 3</th>';
     echo '<th>Promedio</th>';
     echo '<th>Observación</th>';
-    echo '<th>Asignatura</th>';
     echo '<th>Eliminar</th>'; // Agregar una columna para eliminar
     echo '</tr>';
     echo '</thead>';
@@ -176,7 +183,7 @@ if ($result) {
         echo '<td>' . $row['parcial3'] . '</td>';
         echo '<td>' . $row['promedio'] . '</td>';
         echo '<td>' . $row['estado'] . '</td>';
-        echo '<td>' . $row['carrera'] . '</td>';
+
     
         // Agregar un botón de Font Awesome para eliminar el registro
         echo '<td><a href="delete.php?id=' . $row['id'] . '"><i class="fas fa-trash-alt"></i></a></td>';

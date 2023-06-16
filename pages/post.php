@@ -34,15 +34,18 @@ if (isset($_POST['save_score'])){
 }
 
 
-if (isset($_POST['save_user'])) {
+if (isset($_POST['save_register'])) {
     $name = $_POST['name'];
     $ci = $_POST['ci'];
-    $username = $_POST['username'];
+    $user = $_POST['user'];
     $email = $_POST['email'];
     $rol = $_POST['rol'];
+    $password = $_POST['password'];
     $auth = $_POST['auth'];
+    $id_cargo = $_POST['id_cargo'];
 
-    $query = "INSERT INTO users(name, ci, username, email, rol, auth) VALUES ('$name', '$ci', '$username', '$email', '$rol', '$auth')";
+    $query = "INSERT INTO auth(name, ci, user, email, rol, password, auth, id_cargo) VALUES ('$name', '$ci', '$user', 
+    ,'$password','$email', '$rol', '$auth', '$id_cargo')";
 
     $result = mysqli_query($conn, $query);
     if (!$result) {
@@ -50,7 +53,7 @@ if (isset($_POST['save_user'])) {
     }
     $_SESSION['message'] = 'Registro de usuario realizado de forma exitosa';
     $_SESSION['message_type'] = 'success';
-    header("Location: ./users.php");
+    header("Location: ./register.php");
 }
 
 

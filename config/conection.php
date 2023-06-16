@@ -4,9 +4,9 @@ session_start();
 
 $conn =mysqli_connect(
     'localhost',
-    'root',
-    '',
-    'cetis35'
+    'id20920949_laser',
+    'G@rh980326',
+    'id20920949_cetis35'
 );
 
 

@@ -87,13 +87,7 @@
                                 Ingrese la Calificación del parcial 3
                             </div>
                         </div>
-                        <!-- Campos ocultos para la tabla -->
-  <input type="hidden" name="tabla[0][0]" id="tabla-0-0">
-  <input type="hidden" name="tabla[0][1]" id="tabla-0-1">
-  <input type="hidden" name="tabla[0][2]" id="tabla-0-2">
-  <input type="hidden" name="tabla[0][3]" id="tabla-0-3">
-  <input type="hidden" name="tabla[0][4]" id="tabla-0-4">
-  <input type="hidden" name="tabla[0][5]" id="tabla-0-5">
+                
 
                     </div>
                     <hr class="mt-5">

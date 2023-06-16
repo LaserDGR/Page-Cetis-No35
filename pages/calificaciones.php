@@ -88,7 +88,37 @@
                             </div>
                         </div>
                 
+                        <div class="row">
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Carrera</label>
+                            <input type="text" id="nombre" name="carrera" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese nombre del alumno
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Materia</label>
+                            <input type="text" id="nombre" name="materia" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese el número control
+                            </div>
+                        </div>
 
+                        <div class="row">
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Grupo</label>
+                            <input type="text" id="nombre" name="grupo" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese nombre del alumno
+                            </div>
+                        </div>
+                        <div class="col-6 mt-3">
+                            <label class="form-label" for="firstname">Semestre</label>
+                            <input type="text" id="nombre" name="semestre" class="form-control" required>
+                            <div class="invalid-feedback">
+                                Ingrese el número control
+                            </div>
+                       
                     </div>
                     <hr class="mt-5">
                     <div class="form-check">
@@ -97,11 +127,9 @@
                             Alumno.</label>
                     </div>
                     <hr>
+                   
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                        <button class="btn btn-primary btn-block mb-4" onclick="agregarNotas();">Promediar Calificación</button>
-                    </div>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                        <button class="btn btn-primary btn-block mb-4" name="save_score" >Guardar</button>
+                        <button  class="btn btn-primary btn-block mb-4" name="save_score" >PROMEDIAR</button>
                     </div>
 
                 </form>
@@ -112,30 +140,55 @@
         <div class="card bg-info text-center">
             <h4>Resultados</h4>
         </div>
-        <div class="car-footer p-2">
-            <!-- <button class="btn-primary" id="grabar">Grabar</button> -->
-            <table class="table table-striped table-bordered mt-3 ">
-                <thead class="text-center font-weight-bold">
-                    <tr class="bg-secondary text-white">
-                        <td>Nombre</td>
-                        <td>Parcial 1</td>
-                        <td>Parcial 2</td>
-                        <td>Parcial 3</td>
-                        <td>Promedio</td>
-                        <td>Observación</td>
-                    </tr>
-                </thead>
-                <tbody id="addtabla">
+        <?php
 
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!--Design butoon icon github-->
-    <div class="github-icon-container">
-        <a href="https://github.com/juscoder/appweb_calificacion_de_notas" target="_blank"><i
-                class="fab fa-github github-icon"></i></a>
-    </div>
+       $query = "SELECT * FROM calificaciones";
+$result = mysqli_query($conn, $query);
+
+// Check if the query was successful
+if ($result) {
+    // Start the table
+    echo '<table class="table">';
+    echo '<thead>';
+    echo '<tr>';
+    echo '<th>ID</th>';
+    echo '<th>Número Control</th>';
+    echo '<th>Nombre</th>';
+    echo '<th>Parcial 1</th>';
+    echo '<th>Parcial 2</th>';
+    echo '<th>Parcial 3</th>';
+    echo '<th>Promedio</th>';
+    echo '<th>Observación</th>';
+    echo '<th>Asignatura</th>';
+    echo '<th>Eliminar</th>'; // Agregar una columna para eliminar
+    echo '</tr>';
+    echo '</thead>';
+    echo '<tbody>';
+    
+    // Loop through the results and generate the table rows
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '<tr>';
+        echo '<td>' . $row['id'] . '</td>';
+        echo '<td>' . $row['n_control'] . '</td>';
+        echo '<td>' . $row['nombre'] . '</td>';
+        echo '<td>' . $row['parcial1'] . '</td>';
+        echo '<td>' . $row['parcial2'] . '</td>';
+        echo '<td>' . $row['parcial3'] . '</td>';
+        echo '<td>' . $row['promedio'] . '</td>';
+        echo '<td>' . $row['estado'] . '</td>';
+        echo '<td>' . $row['carrera'] . '</td>';
+    
+        // Agregar un botón de Font Awesome para eliminar el registro
+        echo '<td><a href="delete.php?id=' . $row['id'] . '"><i class="fas fa-trash-alt"></i></a></td>';
+    
+        echo '</tr>';
+    }
+    
+    // End the table
+    echo '</tbody>';
+    echo '</table>';
+}
+    ?>
 
     <script src="../promediar.js"></script>
     <script>

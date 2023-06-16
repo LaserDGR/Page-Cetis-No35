@@ -31,7 +31,7 @@ $message = '';
       if (password_verify($password, $hashed_password)) {
         session_start();
         $_SESSION['user'] = $user;
-        header("Location: ../pages/login.php");
+        header("Location: calificaciones.php");
         exit();
       } else {
         $message = "Usuario o contraseña incorrectos";

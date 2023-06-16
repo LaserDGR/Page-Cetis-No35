@@ -1,8 +1,13 @@
-<?php include("../config/conection.php")?>
+<?php include("../config/auth.php")?>
 <?php include("../header/header.php")?>
 
+
+<?php if(!empty($message)): ?>
+      <p> <?= $message ?></p>
+    <?php endif; ?>
+
 <div class="contenedor">
-        <form action="">
+        <form action="calificaciones.php">
             <h1 class="title">Login</h1>
             <label for="">
                 <i class="fa-solid fa-user"></i>
@@ -15,7 +20,9 @@
             </label>
             <a href="#" class="link">Olvidaste Tu Contraseña?</a>
     
-            <button id="button">Login</button>
+            <div class="input-field">
+            <button type="submit" class="submit"  id="button">Iniciar Sesión</button>
+        
         </form>
 
     </div>

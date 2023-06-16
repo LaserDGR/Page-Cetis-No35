@@ -1,47 +1,37 @@
 <?php
+$user=$_POST['user'];
+$password=$_POST['password'];
+session_start();
+$_SESSION['user']=$user;
 
-$message = '';
-  
-  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user = htmlspecialchars($_POST['user']);
-    $password = htmlspecialchars($_POST['password']);
-    
-    // Validar los datos de entrada
-    if (!empty($user) && !empty($password)) {
-      
-      // Conectar a la base de datos y comprobar las credenciales del usuario
-      $servername = "localhost";
-      $username = "root";
-      $dbpassword = "";
-      $dbname = "cetis35";
-      
-      $conn = new mysqli($servername, $username, $dbpassword, $dbname);
-      
-      if ($conn->connect_error) {
-        die("Error de conexión: " . $conn->connect_error);
-      }
-      
-      $stmt = $conn->prepare("SELECT password FROM auth WHERE user = ?");
-      $stmt->bind_param("s", $user);
-      $stmt->execute();
-      $stmt->bind_result($hashed_password);
-      $stmt->fetch();
-      
-      // Utilizar un hash para la contraseña
-      if (password_verify($password, $hashed_password)) {
-        session_start();
-        $_SESSION['user'] = $user;
-        header("Location: calificaciones.php");
-        exit();
-      } else {
-        $message = "Usuario o contraseña incorrectos";
-      }
-      
-      $stmt->close();
-      $conn->close();
-      
-    } else {
-      $message = "Por favor, ingrese su usuario y contraseña";
-    }
-  }
-?>
+$conn=mysqli_connect("localhost","root","","cetis35");
+
+$query="SELECT * FROM auth where user='$user' and password='$password'";
+$result=mysqli_query($conn,$query);
+
+$rows=mysqli_fetch_array($result);
+
+if($rows['id_cargo']==1){ //administrador
+    header("location: index.html");
+
+}else
+if($rows['id_cargo']==2){ //usuario
+header("location: pages/calificaciones.php");
+}
+
+else
+if($rows['id_cargo']==3){ //tecnico
+header("location: pages/calificaciones.php");
+}
+
+
+else{
+    ?>
+    <?php
+    include("index.html");
+    ?>
+    <h1 class="bad">ERROR EN LA AUTENTIFICACION</h1>
+    <?php
+}
+mysqli_free_result($result);
+mysqli_close($conn);

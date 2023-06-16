@@ -22,8 +22,8 @@
         <img src="../Img/ceits-35.png" id="logo">
         <nav>
             <a href="../sitio-web.html">Inicio</a>
-            <a href="../login.html">Login</a>
-            <a href="../calificaciones.html">Calificaciones</a>
+            <a href="../pages/login.php">Login</a>
+            <a href="../pages/calificaciones.php">Calificaciones</a>
             <a href="../contacto.html">Contacto</a>
         </nav>
     </div>
